@@ -1,0 +1,56 @@
+object Form1: TForm1
+  Left = 763
+  Height = 495
+  Top = 130
+  Width = 354
+  Caption = 'Form1'
+  ClientHeight = 495
+  ClientWidth = 354
+  OnCreate = FormCreate
+  LCLVersion = '3.2.0.0'
+  object Display: TEdit
+    Left = 8
+    Height = 48
+    Top = 24
+    Width = 336
+    Alignment = taRightJustify
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -29
+    Font.Name = 'Segoe UI'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 0
+    Text = '0'
+    OnChange = DisplayChange
+  end
+  object CE: TButton
+    Left = 168
+    Height = 40
+    Top = 128
+    Width = 80
+    Caption = 'CE'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -27
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 1
+  end
+  object C: TButton
+    Left = 264
+    Height = 41
+    Top = 128
+    Width = 80
+    Caption = 'C'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -27
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 2
+  end
+end
