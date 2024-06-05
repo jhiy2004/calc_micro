@@ -180,6 +180,8 @@ var
   elemento:string;
   temp:string;
 begin
+  pilhaIndex := -1;
+  polonesaIndex := 0;
   temp := '';
   for elemento in exprVisor do
   begin
@@ -194,6 +196,12 @@ begin
            end
            else
            begin
+              while ((pilhaIndex >= 0) and ((precedencia(temp) < precedencia(pilha[pilhaIndex])) or (precedencia(temp) = precedencia(pilha[pilhaIndex])) and (associatividade(temp) = 0))) do
+              begin
+                 polonesa[polonesaIndex] := pilha[pilhaIndex];
+                 inc(polonesaIndex);
+                 dec(pilhaIndex);
+              end;
               inc(pilhaIndex);
               pilha[pilhaIndex] := temp;
            end;
@@ -201,8 +209,8 @@ begin
         temp := '';
         if elemento = '(' then
         begin
-           pilha[pilhaIndex] := elemento;
            inc(pilhaIndex);
+           pilha[pilhaIndex] := elemento;
         end
         else if elemento = ')' then
         begin
@@ -216,7 +224,7 @@ begin
         end
         else
         begin
-           while((pilhaIndex >= 0) and (precedencia(elemento) < precedencia(pilha[pilhaIndex])) or (precedencia(elemento) = precedencia(pilha[pilhaIndex])) and (associatividade(elemento) = 0)) do
+           while ((pilhaIndex >= 0) and ((precedencia(elemento) < precedencia(pilha[pilhaIndex])) or (precedencia(elemento) = precedencia(pilha[pilhaIndex])) and (associatividade(elemento) = 0))) do
            begin
               polonesa[polonesaIndex] := pilha[pilhaIndex];
               inc(polonesaIndex);
@@ -897,15 +905,17 @@ end;
 procedure TForm1.equalClick(Sender: TObject);
 var
   elemento:string;
+  teste:string;
 begin
   converterParaPolonesa();
   for elemento in polonesa do
   begin
      if elemento <> '' then
-        exprVisor := exprVisor + '|' + elemento;
+        teste := teste + '|' + elemento;
   end;
-  EscreverExpr('=');
-  Display.Text := exprVisor;
+  //EscreverExpr('=');
+  //Display.Text := exprVisor;
+  Display.Text := teste;
 end;
 
 procedure TForm1.CClick(Sender: TObject);
