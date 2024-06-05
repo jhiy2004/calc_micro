@@ -9,15 +9,6 @@ uses
   //RTTICtrls;
 
 type
-    No = record
-       caractere: Char;
-       prox: ^No;
-    end;
-
-    Lista = record
-       inicio: ^No;
-       count : Integer;
-    end;
 
   { TForm1 }
 
@@ -63,12 +54,14 @@ type
     procedure CClick(Sender: TObject);
     procedure CEClick(Sender: TObject);
     procedure cincoClick(Sender: TObject);
+    procedure commaClick(Sender: TObject);
     procedure cosClick(Sender: TObject);
     procedure diviClick(Sender: TObject);
     procedure DoisClick(Sender: TObject);
     procedure DisplayChange(Sender: TObject);
     procedure equalClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure GrausClick(Sender: TObject);
     procedure InvClick(Sender: TObject);
     procedure leftPairClick(Sender: TObject);
     procedure lnClick(Sender: TObject);
@@ -80,7 +73,9 @@ type
     procedure oitoClick(Sender: TObject);
     procedure piClick(Sender: TObject);
     procedure plusClick(Sender: TObject);
+    procedure plusMinusClick(Sender: TObject);
     procedure quatroClick(Sender: TObject);
+    procedure RadianosClick(Sender: TObject);
     procedure rightPairClick(Sender: TObject);
     procedure seisClick(Sender: TObject);
     procedure seteClick(Sender: TObject);
@@ -103,6 +98,7 @@ var
   polonesaIndex: integer;
   pilha: array[0..300] of string;
   pilhaIndex: integer;
+  radianosChecked: boolean;
 implementation
 
 {$R *.lfm}
@@ -110,7 +106,12 @@ implementation
 { TForm1 }
 procedure TForm1.FormCreate(Sender: TObject);
 begin
-  exprVisor := '0';
+  exprVisor := '';
+end;
+
+procedure TForm1.GrausClick(Sender: TObject);
+begin
+  radianosChecked := false;
 end;
 
 procedure TForm1.InvClick(Sender: TObject);
@@ -119,7 +120,7 @@ begin
   begin
      cos.Caption := 'arccos';
      sin.Caption := 'arcsen';
-     tan.Caption := 'arcstg';
+     tan.Caption := 'arctg';
   end
   else
   begin
@@ -129,23 +130,25 @@ begin
   end;
 end;
 
-procedure inicializarLista(var lista : Lista);
-begin
-  lista.inicio := nil;
-  lista.count := 0;
-end;
-
 function precedencia(op : string) : integer;
 begin
   if((op = 'sin') or (op = 'cos') or (op = 'tg') or (op = 'arcsen') or (op = 'arccos') or (op = 'arctg')) then
   begin
-     Result := 4;
+     Result := 6;
   end
   else if((op = 'log') or (op = 'ln')) then
   begin
-     Result := 4;
+     Result := 6;
   end
   else if((op = '~')) then
+  begin
+     Result := 5;
+  end
+  else if((op = '!')) then
+  begin
+     Result := 4;
+  end
+  else if((op = '^')) then
   begin
      Result := 3;
   end
@@ -185,12 +188,20 @@ begin
   temp := '';
   for elemento in exprVisor do
   begin
-     if (elemento = '+') or (elemento = '-') or (elemento = '*') or (elemento = '/') or (elemento = '^') or (elemento = '!') or (elemento = '(') or (elemento = ')') then
+     if (elemento = '~') or (elemento = '+') or (elemento = '-') or (elemento = '*') or (elemento = '/') or (elemento = '^') or (elemento = '!') or (elemento = '(') or (elemento = ')') then
      begin
         if temp <> '' then
         begin
-           if ((temp[1] >= '0') and (temp[1] <= '9')) then
+           if ((temp[1] >= '0') and (temp[1] <= '9')) or ((temp = 'π')) or ((temp = 'e')) then
            begin
+              if ((temp = 'π')) then
+              begin
+                 temp := '3.1415';
+              end;
+              if((temp = 'e')) then
+              begin
+                 temp := '2.7182';
+              end;
               polonesa[polonesaIndex] := temp;
               inc(polonesaIndex);
            end
@@ -241,6 +252,14 @@ begin
   end;
   if (temp <> '') then
   begin
+     if ((temp = 'π')) then
+     begin
+          temp := '3.1415';
+     end;
+     if((temp = 'e')) then
+     begin
+          temp := '2.718281828459045';
+     end;
      polonesa[polonesaIndex] := temp;
      inc(polonesaIndex);
   end;
@@ -559,6 +578,10 @@ function cossenoRadiano(x : real): real;
 var
   resultado : real;
 begin
+  if(x = 3.1415) then
+  begin
+
+  end;
   {$ASMMODE intel}
   asm
      finit
@@ -741,6 +764,19 @@ begin
   Result := arcoTangenteGraus(resultado);
 end;
 
+function negativar(x : real) : real;
+var
+  resultado : real;
+begin
+  {$ASMMODE intel}
+  asm
+     finit
+     fld x
+     fchs
+     fstp resultado
+  end;
+  Result := resultado;
+end;
 
 
 
@@ -750,7 +786,7 @@ end;
 
 procedure EscreverExpr(x: string);
 begin
-  if(exprVisor = '0') then
+  if(exprVisor = '') then
   begin
     exprVisor := x;
   end
@@ -773,12 +809,9 @@ begin
 end;
 
 procedure TForm1.logClick(Sender: TObject);
-var teste : real;
 begin
-  teste := arcoCossenoRadiano(1);
-  Display.Text := FloatToStr(teste);
-  //EscreverExpr('log(');
-  //Display.Text := exprVisor;
+  EscreverExpr('log(');
+  Display.Text := exprVisor;
 end;
 
 procedure TForm1.minusClick(Sender: TObject);
@@ -823,10 +856,21 @@ begin
   Display.Text := exprVisor;
 end;
 
+procedure TForm1.plusMinusClick(Sender: TObject);
+begin
+  EscreverExpr('~');
+  Display.Text := exprVisor;
+end;
+
 procedure TForm1.quatroClick(Sender: TObject);
 begin
   EscreverExpr('4');
   Display.Text := exprVisor;
+end;
+
+procedure TForm1.RadianosClick(Sender: TObject);
+begin
+   radianosChecked := true;
 end;
 
 procedure TForm1.rightPairClick(Sender: TObject);
@@ -902,44 +946,30 @@ begin
 
 end;
 
-procedure TForm1.equalClick(Sender: TObject);
-var
-  elemento:string;
-  teste:string;
-begin
-  converterParaPolonesa();
-  for elemento in polonesa do
-  begin
-     if elemento <> '' then
-        teste := teste + '|' + elemento;
-  end;
-  //EscreverExpr('=');
-  //Display.Text := exprVisor;
-  Display.Text := teste;
-end;
-
 procedure TForm1.CClick(Sender: TObject);
-var textoTela : String;
 begin
-     textoTela := Display.Text;
-
-     if Length(textoTela) > 0 then
-        begin
-          textoTela := Copy(textoTela, 1, Length(textoTela) - 1);
-          Display.text := textoTela;
-        end;
-
+  exprVisor := '';
+  Display.Text := exprVisor;
 end;
 
 procedure TForm1.CEClick(Sender: TObject);
 begin
-  exprVisor := '0';
-  Display.Text := exprVisor;
+  if Length(exprVisor) > 0 then
+        begin
+          exprVisor := Copy(exprVisor, 1, Length(exprVisor) - 1);
+          Display.text := exprVisor;
+        end;
 end;
 
 procedure TForm1.cincoClick(Sender: TObject);
 begin
   EscreverExpr('5');
+  Display.Text := exprVisor;
+end;
+
+procedure TForm1.commaClick(Sender: TObject);
+begin
+  EscreverExpr('.');
   Display.Text := exprVisor;
 end;
 
@@ -969,6 +999,160 @@ begin
   Display.Text := exprVisor;
 end;
 
+function processarPolonesa() : string;
+var
+  i : integer;
+  temp : real;
+  operandos : array[0..300] of real;
+  operandosIndex : integer;
+begin
+  i := 0;
+  operandosIndex := 0;
+  while(i < polonesaIndex) do
+  begin
+    if(polonesa[i] = '+') then
+    begin
+      // Soma
+      temp := Soma(operandos[operandosIndex-1], operandos[operandosIndex-2]);
+      operandos[operandosIndex-1] := 0;
+      operandos[operandosIndex-2] := temp;
+      dec(operandosIndex);
+    end
+    else if(polonesa[i] = '-') then
+    begin
+      // Subtracao
+      temp := Subtracao(operandos[operandosIndex-2], operandos[operandosIndex-1]);
+      operandos[operandosIndex-1] := 0;
+      operandos[operandosIndex-2] := temp;
+      dec(operandosIndex);
+    end
+    else if(polonesa[i] = '*') then
+    begin
+      // Multiplicacao
+      temp := Multiplicacao(operandos[operandosIndex-1], operandos[operandosIndex-2]);
+      operandos[operandosIndex-1] := 0;
+      operandos[operandosIndex-2] := temp;
+      dec(operandosIndex);
+    end
+    else if(polonesa[i] = '/') then
+    begin
+      // Divisao
+      temp := Divisao(operandos[operandosIndex-2], operandos[operandosIndex-1]);
+      operandos[operandosIndex-1] := 0;
+      operandos[operandosIndex-2] := temp;
+      dec(operandosIndex);
+    end
+    else if(polonesa[i] = '^') then
+    begin
+      // Exponenciação
+      temp := xElevadoY(operandos[operandosIndex-2], operandos[operandosIndex-1]);
+      operandos[operandosIndex-1] := 0;
+      operandos[operandosIndex-2] := temp;
+      dec(operandosIndex);
+    end
+    else if(polonesa[i] = '~') then
+    begin
+      // Negativar
+      temp := negativar(operandos[operandosIndex-1]);
+      operandos[operandosIndex-1] := temp;
+    end
+    else if(polonesa[i] = 'sen') then
+    begin
+       if(radianosChecked) then
+       begin
+          temp := senoRadiano(operandos[operandosIndex-1]);
+       end
+       else
+       begin
+          temp := senoGraus(operandos[operandosIndex-1]);
+       end;
+       operandos[operandosIndex-1] := temp;
+    end
+    else if(polonesa[i] = 'cos') then
+    begin
+       if(radianosChecked) then
+       begin
+          temp := cossenoRadiano(operandos[operandosIndex-1]);
+       end
+       else
+       begin
+          temp := cossenoGraus(operandos[operandosIndex-1]);
+       end;
+       operandos[operandosIndex-1] := temp;
+    end
+    else if(polonesa[i] = 'tg') then
+    begin
+       if(radianosChecked) then
+       begin
+          temp := tangenteRadiano(operandos[operandosIndex-1]);
+       end
+       else
+       begin
+          temp := tangenteGraus(operandos[operandosIndex-1]);
+       end;
+       operandos[operandosIndex-1] := temp;
+    end
+    else if(polonesa[i] = 'arcsen') then
+    begin
+       if(radianosChecked) then
+       begin
+          temp := arcoSenoRadiano(operandos[operandosIndex-1]);
+       end
+       else
+       begin
+          temp := arcoSenoGraus(operandos[operandosIndex-1]);
+       end;
+       operandos[operandosIndex-1] := temp;
+    end
+    else if(polonesa[i] = 'arccos') then
+    begin
+       if(radianosChecked) then
+       begin
+          temp := arcoCossenoRadiano(operandos[operandosIndex-1]);
+       end
+       else
+       begin
+          temp := arcoCossenoGraus(operandos[operandosIndex-1]);
+       end;
+       operandos[operandosIndex-1] := temp;
+    end
+    else if(polonesa[i] = 'arctg') then
+    begin
+       if(radianosChecked) then
+       begin
+          temp := arcoTangenteRadiano(operandos[operandosIndex-1]);
+       end
+       else
+       begin
+          temp := arcoTangenteGraus(operandos[operandosIndex-1]);
+       end;
+       operandos[operandosIndex-1] := temp;
+    end
+    else
+    begin
+      operandos[operandosIndex] := StrToFloat(polonesa[i]);
+      inc(operandosIndex);
+    end;
+    inc(i);
+  end;
+  Result := FloatToStr(operandos[0]);
+end;
+
+procedure TForm1.equalClick(Sender: TObject);
+var
+  teste:string;
+  i:integer;
+begin
+  converterParaPolonesa();
+  (*
+  for i := 0 to polonesaIndex do
+  begin
+     if polonesa[i] <> '' then
+        teste := teste + '|' + polonesa[i];
+  end;
+  Display.Text := teste;*)
+  Display.Text := processarPolonesa();
+end;
 
 
 
