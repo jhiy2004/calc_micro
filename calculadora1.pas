@@ -462,10 +462,41 @@ end;
 function fatorial(x : real): real;
 var
   resultado : real;
+  um : real;
+  zero : real;
 begin
+  um := 1.0;
+  zero := 0.0;
   {$ASMMODE intel}
   asm
-
+     finit
+     fld x
+     fld x
+     fcom um
+     fstsw AX
+     sahf
+     je @fimfat
+     fcom zero
+     fstsw AX
+     sahf
+     je @fimzero
+     @loop:
+     fld1
+     fsub
+     fmul st(1), st
+     fcom um
+     fstsw AX
+     sahf
+     je @fimfat
+     jmp @loop
+     @fimfat:
+     fxch
+     fstp resultado
+     jmp @final
+     @fimzero:
+     fld1
+     fstp resultado
+     @final:
   end;
   Result := resultado;
 end;
@@ -1135,6 +1166,11 @@ begin
        begin
           temp := arcoTangenteGraus(operandos[operandosIndex-1]);
        end;
+       operandos[operandosIndex-1] := temp;
+    end
+    else if(polonesa[i] = '!') then
+    begin
+       temp := fatorial(operandos[operandosIndex-1]);
        operandos[operandosIndex-1] := temp;
     end
     else
