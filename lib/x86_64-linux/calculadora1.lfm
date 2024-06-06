@@ -7,10 +7,9 @@ object Form1: TForm1
   ClientHeight = 427
   ClientWidth = 439
   OnCreate = FormCreate
-  LCLVersion = '2.2.6.0'
   object Display: TEdit
     Left = 16
-    Height = 48
+    Height = 53
     Top = 24
     Width = 408
     Alignment = taRightJustify
@@ -66,6 +65,7 @@ object Form1: TForm1
     Font.Height = -19
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
+    OnClick = oneDivXClick
     ParentFont = False
     TabOrder = 3
   end
@@ -140,6 +140,7 @@ object Form1: TForm1
     Font.Height = -19
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
+    OnClick = eXClick
     ParentFont = False
     TabOrder = 8
   end
@@ -319,6 +320,7 @@ object Form1: TForm1
     Font.Height = -19
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
+    OnClick = xSquareClick
     ParentFont = False
     TabOrder = 20
   end
@@ -393,6 +395,7 @@ object Form1: TForm1
     Font.Height = -19
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
+    OnClick = rootYofXClick
     ParentFont = False
     TabOrder = 25
   end
@@ -407,6 +410,7 @@ object Form1: TForm1
     Font.Height = -19
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
+    OnClick = eX27Click
     ParentFont = False
     TabOrder = 26
   end
@@ -502,10 +506,11 @@ object Form1: TForm1
   end
   object Graus: TRadioButton
     Left = 80
-    Height = 21
+    Height = 23
     Top = 88
-    Width = 52
+    Width = 60
     Caption = 'Graus'
+    Checked = True
     Font.CharSet = ANSI_CHARSET
     Font.Height = -13
     Font.Pitch = fpVariable
@@ -516,9 +521,9 @@ object Form1: TForm1
   end
   object Radianos: TRadioButton
     Left = 208
-    Height = 21
+    Height = 23
     Top = 88
-    Width = 72
+    Width = 78
     Caption = 'Radianos'
     Font.CharSet = ANSI_CHARSET
     Font.Height = -13

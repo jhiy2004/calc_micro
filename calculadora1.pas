@@ -60,6 +60,8 @@ type
     procedure DoisClick(Sender: TObject);
     procedure DisplayChange(Sender: TObject);
     procedure equalClick(Sender: TObject);
+    procedure eX27Click(Sender: TObject);
+    procedure eXClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure GrausClick(Sender: TObject);
     procedure InvClick(Sender: TObject);
@@ -71,18 +73,21 @@ type
     procedure nfatClick(Sender: TObject);
     procedure noveClick(Sender: TObject);
     procedure oitoClick(Sender: TObject);
+    procedure oneDivXClick(Sender: TObject);
     procedure piClick(Sender: TObject);
     procedure plusClick(Sender: TObject);
     procedure plusMinusClick(Sender: TObject);
     procedure quatroClick(Sender: TObject);
     procedure RadianosClick(Sender: TObject);
     procedure rightPairClick(Sender: TObject);
+    procedure rootYofXClick(Sender: TObject);
     procedure seisClick(Sender: TObject);
     procedure seteClick(Sender: TObject);
     procedure sinClick(Sender: TObject);
     procedure tanClick(Sender: TObject);
     procedure tresClick(Sender: TObject);
     procedure UmClick(Sender: TObject);
+    procedure xSquareClick(Sender: TObject);
     procedure xYClick(Sender: TObject);
     procedure zeroClick(Sender: TObject);
   private
@@ -148,7 +153,7 @@ begin
   begin
      Result := 4;
   end
-  else if((op = '^')) then
+  else if((op = '^') or (op = '√')) then
   begin
      Result := 3;
   end
@@ -341,10 +346,9 @@ end;
 
 function eulerElevadoX(x : real): real;
 var
-  resultado : real;
   euler : real;
 begin
-  euler := 2.718281828459045;
+  euler := 2.71828182845904523536;
   {$ASMMODE intel}
   asm
      finit
@@ -361,9 +365,8 @@ begin
      fld1
      fadd
      fscale
-     fstp resultado
+     fstp result
   end;
-  Result := resultado;
 end;
 
 function xElevadoY(x, y : real): real;
@@ -606,30 +609,14 @@ begin
 end;
 
 function cossenoRadiano(x : real): real;
-var
-  resultado : real;
 begin
-  if(x = 3.1415) then
-  begin
-    {$ASMMODE intel}
-    asm
-       finit
-       fldpi
-       fcos
-       fstp resultado
-    end;
-  end
-  else
-  begin
-    {$ASMMODE intel}
-    asm
-       finit
-       fld x
-       fcos
-       fstp resultado
-    end;
+  {$ASMMODE intel}
+  asm
+     finit
+     fld x
+     fcos
+     fstp result
   end;
-  Result := resultado;
 end;
 
 function cossenoGraus(x : real): real;
@@ -884,6 +871,12 @@ begin
   Display.Text := exprVisor;
 end;
 
+procedure TForm1.oneDivXClick(Sender: TObject);
+begin
+   EscreverExpr('1/');
+   Display.Text := exprVisor;
+end;
+
 procedure TForm1.piClick(Sender: TObject);
 begin
   EscreverExpr('π');
@@ -916,6 +909,12 @@ end;
 procedure TForm1.rightPairClick(Sender: TObject);
 begin
   EscreverExpr(')');
+  Display.Text := exprVisor;
+end;
+
+procedure TForm1.rootYofXClick(Sender: TObject);
+begin
+  EscreverExpr('^(1/');
   Display.Text := exprVisor;
 end;
 
@@ -966,6 +965,12 @@ end;
 procedure TForm1.UmClick(Sender: TObject);
 begin
   EscreverExpr('1');
+  Display.Text := exprVisor;
+end;
+
+procedure TForm1.xSquareClick(Sender: TObject);
+begin
+   EscreverExpr('^2');
   Display.Text := exprVisor;
 end;
 
@@ -1173,6 +1178,23 @@ begin
        temp := fatorial(operandos[operandosIndex-1]);
        operandos[operandosIndex-1] := temp;
     end
+    else if(polonesa[i] = 'log') then
+    begin
+       //Logaritmo
+       temp := logaritmo(10, operandos[operandosIndex-1]);
+       operandos[operandosIndex-1] := temp;
+    end
+    else if(polonesa[i] = 'ln') then
+    begin
+       //Logaritmo neperiano
+       temp := logNeperiano(operandos[operandosIndex-1]);
+       operandos[operandosIndex-1] := temp;
+    end
+    else if (polonesa[i] = '√') then
+    begin
+       temp := sqrtX(operandos[operandosIndex-1]);
+       operandos[operandosIndex-1] := temp;
+    end
     else
     begin
       operandos[operandosIndex] := StrToFloat(polonesa[i]);
@@ -1189,14 +1211,32 @@ var
   i:integer;
 begin
   converterParaPolonesa();
-  (*
-  for i := 0 to polonesaIndex do
+  (*for i := 0 to polonesaIndex do
   begin
      if polonesa[i] <> '' then
-        teste := teste + '|' + polonesa[i];
+        if((polonesa[i][1] >= '0') and (polonesa[i][1] <= '9')) then
+        begin
+           teste := teste + '`' + FloatToStr(StrToFloat(polonesa[i]));
+        end
+        else
+        begin
+           teste := teste + '|' + polonesa[i];
+        end;
   end;
   Display.Text := teste;*)
   Display.Text := processarPolonesa();
+end;
+
+procedure TForm1.eX27Click(Sender: TObject);
+begin
+  EscreverExpr('√(');
+  Display.Text := exprVisor;
+end;
+
+procedure TForm1.eXClick(Sender: TObject);
+begin
+  EscreverExpr('e^');
+  Display.Text := exprVisor;
 end;
 
 
