@@ -201,11 +201,11 @@ begin
            begin
               if ((temp = 'π')) then
               begin
-                 temp := '3.1415';
+                 temp := '3.14159265358979323846';
               end;
               if((temp = 'e')) then
               begin
-                 temp := '2.7182';
+                 temp := '2.71828182845904523536';
               end;
               polonesa[polonesaIndex] := temp;
               inc(polonesaIndex);
@@ -259,7 +259,7 @@ begin
   begin
      if ((temp = 'π')) then
      begin
-          temp := '3.1415';
+          temp := '3.14159265358979323846';
      end;
      if((temp = 'e')) then
      begin
@@ -609,17 +609,14 @@ begin
 end;
 
 function cossenoRadiano(x : real): real;
-var
-  resultado : real;
 begin
   {$ASMMODE intel}
   asm
      finit
      fld x
      fcos
-     fstp resultado
+     fstp result
   end;
-  Result := resultado;
 end;
 
 function cossenoGraus(x : real): real;

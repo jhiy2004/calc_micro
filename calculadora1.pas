@@ -201,11 +201,11 @@ begin
            begin
               if ((temp = 'π')) then
               begin
-                 temp := '3.1415';
+                 temp := '3.14159265358979323846';
               end;
               if((temp = 'e')) then
               begin
-                 temp := '2.7182';
+                 temp := '2.71828182845904523536';
               end;
               polonesa[polonesaIndex] := temp;
               inc(polonesaIndex);
@@ -259,11 +259,11 @@ begin
   begin
      if ((temp = 'π')) then
      begin
-          temp := '3.1415';
+          temp := '3.14159265358979323846';
      end;
      if((temp = 'e')) then
      begin
-          temp := '2.718281828459045';
+          temp := '2.71828182845904523536';
      end;
      polonesa[polonesaIndex] := temp;
      inc(polonesaIndex);

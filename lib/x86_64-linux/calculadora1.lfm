@@ -7,6 +7,7 @@ object Form1: TForm1
   ClientHeight = 427
   ClientWidth = 439
   OnCreate = FormCreate
+  LCLVersion = '2.2.6.0'
   object Display: TEdit
     Left = 16
     Height = 53
@@ -518,6 +519,7 @@ object Form1: TForm1
     OnClick = GrausClick
     ParentFont = False
     TabOrder = 33
+    TabStop = True
   end
   object Radianos: TRadioButton
     Left = 208

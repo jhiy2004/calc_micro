@@ -10,7 +10,7 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="117" Y="10"/>
-        <UsageCount Value="121"/>
+        <UsageCount Value="131"/>
       </Unit>
       <Unit>
         <Filename Value="calculadora1.pas"/>
@@ -20,19 +20,11 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Calculadora1"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="606"/>
-        <CursorPos X="41" Y="611"/>
-        <UsageCount Value="121"/>
+        <TopLine Value="255"/>
+        <CursorPos X="42" Y="262"/>
+        <UsageCount Value="131"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
-      </Unit>
-      <Unit>
-        <Filename Value="..\..\AppData\Local\Temp\Rar$DIa16180.49251\unidadecalculadora.pas"/>
-        <UnitName Value="UnidadeCalculadora"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="241"/>
-        <CursorPos X="20" Y="157"/>
-        <UsageCount Value="1"/>
       </Unit>
       <Unit>
         <Filename Value="..\CalculadoraAssembly-main\unidadecalculadora.pas"/>
@@ -43,26 +35,10 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="16"/>
         <CursorPos X="41" Y="454"/>
-        <UsageCount Value="3"/>
+        <UsageCount Value="2"/>
       </Unit>
     </Units>
     <JumpHistory HistoryIndex="29">
-      <Position>
-        <Filename Value="calculadora1.pas"/>
-        <Caret Line="1009" Column="37" TopLine="998"/>
-      </Position>
-      <Position>
-        <Filename Value="calculadora1.pas"/>
-        <Caret Line="999" Column="39" TopLine="990"/>
-      </Position>
-      <Position>
-        <Filename Value="calculadora1.pas"/>
-        <Caret Line="1009" Column="38" TopLine="992"/>
-      </Position>
-      <Position>
-        <Filename Value="calculadora1.pas"/>
-        <Caret Line="993" Column="40" TopLine="987"/>
-      </Position>
       <Position>
         <Filename Value="calculadora1.pas"/>
         <Caret Line="1036" Column="43" TopLine="1030"/>
@@ -166,6 +142,22 @@
       <Position>
         <Filename Value="calculadora1.pas"/>
         <Caret Line="1232" Column="5" TopLine="1230"/>
+      </Position>
+      <Position>
+        <Filename Value="calculadora1.pas"/>
+        <Caret Line="201" Column="60" TopLine="196"/>
+      </Position>
+      <Position>
+        <Filename Value="calculadora1.pas"/>
+        <Caret Line="202" Column="30" TopLine="196"/>
+      </Position>
+      <Position>
+        <Filename Value="calculadora1.pas"/>
+        <Caret Line="200" Column="70" TopLine="196"/>
+      </Position>
+      <Position>
+        <Filename Value="calculadora1.pas"/>
+        <Caret Line="202" Column="43" TopLine="196"/>
       </Position>
     </JumpHistory>
     <RunParams>
