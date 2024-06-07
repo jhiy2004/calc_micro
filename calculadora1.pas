@@ -528,7 +528,7 @@ var
   resultado : real;
   euler : real;
 begin
-  euler := 2.718281828459045;
+  euler := 2.71828182845904523536;
   {$ASMMODE intel}
   asm
      finit
@@ -767,12 +767,24 @@ begin
      fdiv
      fstp resultado
   end;
-  Result := arcoTangenteRadiano(resultado);
+  if resultado < 0.0 then
+  begin
+    Result := 3.14159265358979323846 + arcoTangenteRadiano(resultado);
+  end
+  else if x = -1 then
+  begin
+    Result := 3.14159265358979323846;
+  end
+  else
+  begin
+    Result := arcoTangenteRadiano(resultado);
+  end;
 end;
 
 function arcoCossenoGraus(x : real): real;
 var
   resultado : real;
+  temp : real;
 begin
   // verificar se -1 <= x <= 1
   {$ASMMODE intel}
@@ -788,7 +800,18 @@ begin
      fdiv
      fstp resultado
   end;
-  Result := arcoTangenteGraus(resultado);
+  if resultado < 0.0 then
+  begin
+    Result := 180.0 + arcoTangenteGraus(resultado);
+  end
+  else if x = -1 then
+  begin
+    Result := 180.0;
+  end
+  else
+  begin
+    Result := arcoTangenteGraus(resultado);
+  end;
 end;
 
 function negativar(x : real) : real;
