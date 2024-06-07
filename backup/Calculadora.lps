@@ -20,8 +20,8 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Calculadora1"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="766"/>
-        <CursorPos X="37" Y="776"/>
+        <TopLine Value="799"/>
+        <CursorPos X="21" Y="809"/>
         <UsageCount Value="132"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>

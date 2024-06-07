@@ -7,7 +7,6 @@ object Form1: TForm1
   ClientHeight = 427
   ClientWidth = 439
   OnCreate = FormCreate
-  LCLVersion = '2.2.6.0'
   object Display: TEdit
     Left = 16
     Height = 53
@@ -56,9 +55,9 @@ object Form1: TForm1
     TabOrder = 2
   end
   object oneDivX: TButton
-    Left = 264
+    Left = 238
     Height = 40
-    Top = 176
+    Top = 174
     Width = 48
     Caption = '1/x'
     Font.CharSet = ANSI_CHARSET
@@ -71,7 +70,7 @@ object Form1: TForm1
     TabOrder = 3
   end
   object nfat: TButton
-    Left = 208
+    Left = 184
     Height = 40
     Top = 176
     Width = 48
@@ -86,9 +85,9 @@ object Form1: TForm1
     TabOrder = 4
   end
   object log: TButton
-    Left = 152
-    Height = 40
-    Top = 176
+    Left = 128
+    Height = 42
+    Top = 174
     Width = 48
     Caption = 'log'
     Font.CharSet = ANSI_CHARSET
@@ -101,7 +100,7 @@ object Form1: TForm1
     TabOrder = 5
   end
   object ln: TButton
-    Left = 96
+    Left = 72
     Height = 40
     Top = 176
     Width = 48
@@ -116,10 +115,10 @@ object Form1: TForm1
     TabOrder = 6
   end
   object sin: TButton
-    Left = 320
+    Left = 296
     Height = 40
     Top = 176
-    Width = 48
+    Width = 72
     Caption = 'sin'
     Font.CharSet = ANSI_CHARSET
     Font.Color = clFuchsia
@@ -146,7 +145,7 @@ object Form1: TForm1
     TabOrder = 8
   end
   object sete: TButton
-    Left = 96
+    Left = 72
     Height = 40
     Top = 224
     Width = 48
@@ -161,7 +160,7 @@ object Form1: TForm1
     TabOrder = 9
   end
   object oito: TButton
-    Left = 152
+    Left = 128
     Height = 40
     Top = 224
     Width = 48
@@ -176,7 +175,7 @@ object Form1: TForm1
     TabOrder = 10
   end
   object nove: TButton
-    Left = 208
+    Left = 184
     Height = 40
     Top = 224
     Width = 48
@@ -191,7 +190,7 @@ object Form1: TForm1
     TabOrder = 11
   end
   object divi: TButton
-    Left = 264
+    Left = 240
     Height = 40
     Top = 224
     Width = 48
@@ -206,10 +205,10 @@ object Form1: TForm1
     TabOrder = 12
   end
   object cos: TButton
-    Left = 320
+    Left = 296
     Height = 40
     Top = 224
-    Width = 48
+    Width = 72
     Caption = 'cos'
     Font.CharSet = ANSI_CHARSET
     Font.Color = clFuchsia
@@ -236,7 +235,7 @@ object Form1: TForm1
     TabOrder = 14
   end
   object quatro: TButton
-    Left = 96
+    Left = 72
     Height = 40
     Top = 272
     Width = 48
@@ -251,7 +250,7 @@ object Form1: TForm1
     TabOrder = 15
   end
   object cinco: TButton
-    Left = 152
+    Left = 128
     Height = 40
     Top = 272
     Width = 48
@@ -266,7 +265,7 @@ object Form1: TForm1
     TabOrder = 16
   end
   object seis: TButton
-    Left = 208
+    Left = 184
     Height = 40
     Top = 272
     Width = 48
@@ -281,7 +280,7 @@ object Form1: TForm1
     TabOrder = 17
   end
   object mul: TButton
-    Left = 264
+    Left = 240
     Height = 40
     Top = 272
     Width = 48
@@ -296,10 +295,10 @@ object Form1: TForm1
     TabOrder = 18
   end
   object tan: TButton
-    Left = 320
+    Left = 296
     Height = 40
     Top = 272
-    Width = 48
+    Width = 72
     Caption = 'tan'
     Font.CharSet = ANSI_CHARSET
     Font.Color = clFuchsia
@@ -326,7 +325,7 @@ object Form1: TForm1
     TabOrder = 20
   end
   object um: TButton
-    Left = 96
+    Left = 72
     Height = 40
     Top = 320
     Width = 48
@@ -341,7 +340,7 @@ object Form1: TForm1
     TabOrder = 21
   end
   object dois: TButton
-    Left = 152
+    Left = 128
     Height = 40
     Top = 320
     Width = 48
@@ -356,7 +355,7 @@ object Form1: TForm1
     TabOrder = 22
   end
   object tres: TButton
-    Left = 208
+    Left = 184
     Height = 40
     Top = 320
     Width = 48
@@ -371,7 +370,7 @@ object Form1: TForm1
     TabOrder = 23
   end
   object minus: TButton
-    Left = 264
+    Left = 240
     Height = 40
     Top = 320
     Width = 48
@@ -386,10 +385,10 @@ object Form1: TForm1
     TabOrder = 24
   end
   object rootYofX: TButton
-    Left = 320
+    Left = 296
     Height = 40
     Top = 320
-    Width = 48
+    Width = 72
     Caption = 'x^1/y'
     Font.CharSet = ANSI_CHARSET
     Font.Color = clFuchsia
@@ -431,7 +430,7 @@ object Form1: TForm1
     TabOrder = 27
   end
   object zero: TButton
-    Left = 96
+    Left = 72
     Height = 40
     Top = 368
     Width = 48
@@ -446,7 +445,7 @@ object Form1: TForm1
     TabOrder = 28
   end
   object plusMinus: TButton
-    Left = 152
+    Left = 128
     Height = 40
     Top = 368
     Width = 48
@@ -461,7 +460,7 @@ object Form1: TForm1
     TabOrder = 29
   end
   object comma: TButton
-    Left = 208
+    Left = 184
     Height = 40
     Top = 368
     Width = 48
@@ -476,7 +475,7 @@ object Form1: TForm1
     TabOrder = 30
   end
   object plus: TButton
-    Left = 264
+    Left = 240
     Height = 40
     Top = 368
     Width = 48
@@ -491,7 +490,7 @@ object Form1: TForm1
     TabOrder = 31
   end
   object equal: TButton
-    Left = 320
+    Left = 304
     Height = 40
     Top = 368
     Width = 48

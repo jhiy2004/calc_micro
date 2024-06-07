@@ -804,6 +804,10 @@ begin
   begin
     Result := 180.0 + arcoTangenteGraus(resultado);
   end
+  else if x = -1 then
+  begin
+    Result := 180.0;
+  end
   else
   begin
     Result := arcoTangenteGraus(resultado);
