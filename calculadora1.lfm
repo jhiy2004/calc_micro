@@ -7,9 +7,10 @@ object Form1: TForm1
   ClientHeight = 427
   ClientWidth = 439
   OnCreate = FormCreate
+  LCLVersion = '3.2.0.0'
   object Display: TEdit
     Left = 16
-    Height = 53
+    Height = 48
     Top = 24
     Width = 408
     Alignment = taRightJustify
@@ -19,10 +20,10 @@ object Form1: TForm1
     Font.Name = 'Segoe UI'
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
-    OnChange = DisplayChange
     ParentFont = False
     ReadOnly = True
     TabOrder = 0
+    OnChange = DisplayChange
   end
   object CE: TButton
     Left = 240
@@ -35,9 +36,9 @@ object Form1: TForm1
     Font.Height = -27
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
-    OnClick = CEClick
     ParentFont = False
     TabOrder = 1
+    OnClick = CEClick
   end
   object C: TButton
     Left = 344
@@ -50,9 +51,9 @@ object Form1: TForm1
     Font.Height = -27
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
-    OnClick = CClick
     ParentFont = False
     TabOrder = 2
+    OnClick = CClick
   end
   object oneDivX: TButton
     Left = 238
@@ -65,9 +66,9 @@ object Form1: TForm1
     Font.Height = -19
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
-    OnClick = oneDivXClick
     ParentFont = False
     TabOrder = 3
+    OnClick = oneDivXClick
   end
   object nfat: TButton
     Left = 184
@@ -80,9 +81,9 @@ object Form1: TForm1
     Font.Height = -19
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
-    OnClick = nfatClick
     ParentFont = False
     TabOrder = 4
+    OnClick = nfatClick
   end
   object log: TButton
     Left = 128
@@ -95,9 +96,9 @@ object Form1: TForm1
     Font.Height = -19
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
-    OnClick = logClick
     ParentFont = False
     TabOrder = 5
+    OnClick = logClick
   end
   object ln: TButton
     Left = 72
@@ -110,9 +111,9 @@ object Form1: TForm1
     Font.Height = -19
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
-    OnClick = lnClick
     ParentFont = False
     TabOrder = 6
+    OnClick = lnClick
   end
   object sin: TButton
     Left = 296
@@ -125,9 +126,9 @@ object Form1: TForm1
     Font.Height = -19
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
-    OnClick = sinClick
     ParentFont = False
     TabOrder = 7
+    OnClick = sinClick
   end
   object eX: TButton
     Left = 376
@@ -140,9 +141,9 @@ object Form1: TForm1
     Font.Height = -19
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
-    OnClick = eXClick
     ParentFont = False
     TabOrder = 8
+    OnClick = eXClick
   end
   object sete: TButton
     Left = 72
@@ -155,9 +156,9 @@ object Form1: TForm1
     Font.Height = -19
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
-    OnClick = seteClick
     ParentFont = False
     TabOrder = 9
+    OnClick = seteClick
   end
   object oito: TButton
     Left = 128
@@ -170,9 +171,9 @@ object Form1: TForm1
     Font.Height = -19
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
-    OnClick = oitoClick
     ParentFont = False
     TabOrder = 10
+    OnClick = oitoClick
   end
   object nove: TButton
     Left = 184
@@ -185,9 +186,9 @@ object Form1: TForm1
     Font.Height = -19
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
-    OnClick = noveClick
     ParentFont = False
     TabOrder = 11
+    OnClick = noveClick
   end
   object divi: TButton
     Left = 240
@@ -200,9 +201,9 @@ object Form1: TForm1
     Font.Height = -19
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
-    OnClick = diviClick
     ParentFont = False
     TabOrder = 12
+    OnClick = diviClick
   end
   object cos: TButton
     Left = 296
@@ -215,9 +216,9 @@ object Form1: TForm1
     Font.Height = -19
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
-    OnClick = cosClick
     ParentFont = False
     TabOrder = 13
+    OnClick = cosClick
   end
   object xY: TButton
     Left = 376
@@ -230,9 +231,9 @@ object Form1: TForm1
     Font.Height = -19
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
-    OnClick = xYClick
     ParentFont = False
     TabOrder = 14
+    OnClick = xYClick
   end
   object quatro: TButton
     Left = 72
@@ -245,9 +246,9 @@ object Form1: TForm1
     Font.Height = -19
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
-    OnClick = quatroClick
     ParentFont = False
     TabOrder = 15
+    OnClick = quatroClick
   end
   object cinco: TButton
     Left = 128
@@ -260,9 +261,9 @@ object Form1: TForm1
     Font.Height = -19
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
-    OnClick = cincoClick
     ParentFont = False
     TabOrder = 16
+    OnClick = cincoClick
   end
   object seis: TButton
     Left = 184
@@ -275,9 +276,9 @@ object Form1: TForm1
     Font.Height = -19
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
-    OnClick = seisClick
     ParentFont = False
     TabOrder = 17
+    OnClick = seisClick
   end
   object mul: TButton
     Left = 240
@@ -290,9 +291,9 @@ object Form1: TForm1
     Font.Height = -19
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
-    OnClick = mulClick
     ParentFont = False
     TabOrder = 18
+    OnClick = mulClick
   end
   object tan: TButton
     Left = 296
@@ -305,9 +306,9 @@ object Form1: TForm1
     Font.Height = -19
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
-    OnClick = tanClick
     ParentFont = False
     TabOrder = 19
+    OnClick = tanClick
   end
   object xSquare: TButton
     Left = 376
@@ -320,9 +321,9 @@ object Form1: TForm1
     Font.Height = -19
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
-    OnClick = xSquareClick
     ParentFont = False
     TabOrder = 20
+    OnClick = xSquareClick
   end
   object um: TButton
     Left = 72
@@ -335,9 +336,9 @@ object Form1: TForm1
     Font.Height = -19
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
-    OnClick = UmClick
     ParentFont = False
     TabOrder = 21
+    OnClick = UmClick
   end
   object dois: TButton
     Left = 128
@@ -350,9 +351,9 @@ object Form1: TForm1
     Font.Height = -19
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
-    OnClick = DoisClick
     ParentFont = False
     TabOrder = 22
+    OnClick = DoisClick
   end
   object tres: TButton
     Left = 184
@@ -365,9 +366,9 @@ object Form1: TForm1
     Font.Height = -19
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
-    OnClick = tresClick
     ParentFont = False
     TabOrder = 23
+    OnClick = tresClick
   end
   object minus: TButton
     Left = 240
@@ -380,9 +381,9 @@ object Form1: TForm1
     Font.Height = -19
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
-    OnClick = minusClick
     ParentFont = False
     TabOrder = 24
+    OnClick = minusClick
   end
   object rootYofX: TButton
     Left = 296
@@ -395,9 +396,9 @@ object Form1: TForm1
     Font.Height = -19
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
-    OnClick = rootYofXClick
     ParentFont = False
     TabOrder = 25
+    OnClick = rootYofXClick
   end
   object eX27: TButton
     Left = 376
@@ -410,9 +411,9 @@ object Form1: TForm1
     Font.Height = -19
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
-    OnClick = eX27Click
     ParentFont = False
     TabOrder = 26
+    OnClick = eX27Click
   end
   object pi: TButton
     Left = 16
@@ -425,9 +426,9 @@ object Form1: TForm1
     Font.Height = -19
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
-    OnClick = piClick
     ParentFont = False
     TabOrder = 27
+    OnClick = piClick
   end
   object zero: TButton
     Left = 72
@@ -440,9 +441,9 @@ object Form1: TForm1
     Font.Height = -19
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
-    OnClick = zeroClick
     ParentFont = False
     TabOrder = 28
+    OnClick = zeroClick
   end
   object plusMinus: TButton
     Left = 128
@@ -455,9 +456,9 @@ object Form1: TForm1
     Font.Height = -19
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
-    OnClick = plusMinusClick
     ParentFont = False
     TabOrder = 29
+    OnClick = plusMinusClick
   end
   object comma: TButton
     Left = 184
@@ -470,9 +471,9 @@ object Form1: TForm1
     Font.Height = -19
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
-    OnClick = commaClick
     ParentFont = False
     TabOrder = 30
+    OnClick = commaClick
   end
   object plus: TButton
     Left = 240
@@ -485,9 +486,9 @@ object Form1: TForm1
     Font.Height = -19
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
-    OnClick = plusClick
     ParentFont = False
     TabOrder = 31
+    OnClick = plusClick
   end
   object equal: TButton
     Left = 304
@@ -500,39 +501,39 @@ object Form1: TForm1
     Font.Height = -19
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
-    OnClick = equalClick
     ParentFont = False
     TabOrder = 32
+    OnClick = equalClick
   end
   object Graus: TRadioButton
     Left = 80
-    Height = 23
+    Height = 21
     Top = 88
-    Width = 60
+    Width = 52
     Caption = 'Graus'
     Checked = True
     Font.CharSet = ANSI_CHARSET
     Font.Height = -13
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
-    OnClick = GrausClick
     ParentFont = False
     TabOrder = 33
     TabStop = True
+    OnClick = GrausClick
   end
   object Radianos: TRadioButton
     Left = 208
-    Height = 23
+    Height = 21
     Top = 88
-    Width = 78
+    Width = 72
     Caption = 'Radianos'
     Font.CharSet = ANSI_CHARSET
     Font.Height = -13
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
-    OnClick = RadianosClick
     ParentFont = False
     TabOrder = 34
+    OnClick = RadianosClick
   end
   object Inv: TCheckBox
     Left = 16
@@ -545,9 +546,9 @@ object Form1: TForm1
     Font.Height = -13
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
-    OnClick = InvClick
     ParentFont = False
     TabOrder = 35
+    OnClick = InvClick
   end
   object leftPair: TButton
     Left = 16
@@ -560,9 +561,9 @@ object Form1: TForm1
     Font.Height = -19
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
-    OnClick = leftPairClick
     ParentFont = False
     TabOrder = 36
+    OnClick = leftPairClick
   end
   object rightPair: TButton
     Left = 16
@@ -575,8 +576,8 @@ object Form1: TForm1
     Font.Height = -19
     Font.Pitch = fpVariable
     Font.Quality = fqDraft
-    OnClick = rightPairClick
     ParentFont = False
     TabOrder = 37
+    OnClick = rightPairClick
   end
 end

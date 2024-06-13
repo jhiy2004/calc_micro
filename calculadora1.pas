@@ -201,11 +201,11 @@ begin
            begin
               if ((temp = 'π')) then
               begin
-                 temp := '3.14159265358979323846';
+                 temp := '3,14159265358979323846';
               end;
               if((temp = 'e')) then
               begin
-                 temp := '2.71828182845904523536';
+                 temp := '2,71828182845904523536';
               end;
               polonesa[polonesaIndex] := temp;
               inc(polonesaIndex);
@@ -259,11 +259,11 @@ begin
   begin
      if ((temp = 'π')) then
      begin
-          temp := '3.14159265358979323846';
+          temp := '3,14159265358979323846';
      end;
      if((temp = 'e')) then
      begin
-          temp := '2.71828182845904523536';
+          temp := '2,71828182845904523536';
      end;
      polonesa[polonesaIndex] := temp;
      inc(polonesaIndex);
@@ -836,92 +836,79 @@ end;
 
 procedure EscreverExpr(x: string);
 begin
-  if(exprVisor = '') then
+  if(Form1.Display.Text = '') then
   begin
-    exprVisor := x;
+    Form1.Display.Text := x;
   end
   else
   begin
-    exprVisor := exprVisor+x;
+    Form1.Display.Text := Form1.Display.Text+x;
   end;
 end;
 
 procedure TForm1.leftPairClick(Sender: TObject);
 begin
   EscreverExpr('(');
-  Display.Text := exprVisor;
 end;
 
 procedure TForm1.lnClick(Sender: TObject);
 begin
   EscreverExpr('ln(');
-  Display.Text := exprVisor;
 end;
 
 procedure TForm1.logClick(Sender: TObject);
 begin
   EscreverExpr('log(');
-  Display.Text := exprVisor;
 end;
 
 procedure TForm1.minusClick(Sender: TObject);
 begin
   EscreverExpr('-');
-  Display.Text := exprVisor;
 end;
 
 procedure TForm1.mulClick(Sender: TObject);
 begin
   EscreverExpr('*');
-  Display.Text := exprVisor;
 end;
 
 procedure TForm1.nfatClick(Sender: TObject);
 begin
   EscreverExpr('!');
-  Display.Text := exprVisor;
 end;
 
 procedure TForm1.noveClick(Sender: TObject);
 begin
   EscreverExpr('9');
-  Display.Text := exprVisor;
 end;
 
 procedure TForm1.oitoClick(Sender: TObject);
 begin
   EscreverExpr('8');
-  Display.Text := exprVisor;
 end;
 
 procedure TForm1.oneDivXClick(Sender: TObject);
 begin
    EscreverExpr('1/');
-   Display.Text := exprVisor;
 end;
 
 procedure TForm1.piClick(Sender: TObject);
 begin
   EscreverExpr('π');
-  Display.Text := exprVisor;
 end;
 
 procedure TForm1.plusClick(Sender: TObject);
 begin
   EscreverExpr('+');
-  Display.Text := exprVisor;
 end;
 
 procedure TForm1.plusMinusClick(Sender: TObject);
 begin
   EscreverExpr('~');
-  Display.Text := exprVisor;
 end;
 
 procedure TForm1.quatroClick(Sender: TObject);
 begin
   EscreverExpr('4');
-  Display.Text := exprVisor;
 end;
 
 procedure TForm1.RadianosClick(Sender: TObject);
@@ -932,25 +919,21 @@ end;
 procedure TForm1.rightPairClick(Sender: TObject);
 begin
   EscreverExpr(')');
-  Display.Text := exprVisor;
 end;
 
 procedure TForm1.rootYofXClick(Sender: TObject);
 begin
   EscreverExpr('^(1/');
-  Display.Text := exprVisor;
 end;
 
 procedure TForm1.seisClick(Sender: TObject);
 begin
   EscreverExpr('6');
-  Display.Text := exprVisor;
 end;
 
 procedure TForm1.seteClick(Sender: TObject);
 begin
   EscreverExpr('7');
-  Display.Text := exprVisor;
 end;
 
 procedure TForm1.sinClick(Sender: TObject);
@@ -963,7 +946,6 @@ begin
   begin
     EscreverExpr('sen(');
   end;
-  Display.Text := exprVisor;
 end;
 
 procedure TForm1.tanClick(Sender: TObject);
@@ -976,37 +958,31 @@ begin
   begin
     EscreverExpr('tg(');
   end;
-  Display.Text := exprVisor;
 end;
 
 procedure TForm1.tresClick(Sender: TObject);
 begin
   EscreverExpr('3');
-  Display.Text := exprVisor;
 end;
 
 procedure TForm1.UmClick(Sender: TObject);
 begin
   EscreverExpr('1');
-  Display.Text := exprVisor;
 end;
 
 procedure TForm1.xSquareClick(Sender: TObject);
 begin
    EscreverExpr('^2');
-  Display.Text := exprVisor;
 end;
 
 procedure TForm1.xYClick(Sender: TObject);
 begin
   EscreverExpr('^');
-  Display.Text := exprVisor;
 end;
 
 procedure TForm1.zeroClick(Sender: TObject);
 begin
   EscreverExpr('0');
-  Display.Text := exprVisor;
 end;
 
 procedure TForm1.DisplayChange(Sender: TObject);
@@ -1016,29 +992,25 @@ end;
 
 procedure TForm1.CClick(Sender: TObject);
 begin
-  exprVisor := '';
-  Display.Text := exprVisor;
+  Display.Text := '';
 end;
 
 procedure TForm1.CEClick(Sender: TObject);
 begin
-  if Length(exprVisor) > 0 then
+  if Length(Display.Text) > 0 then
         begin
-          exprVisor := Copy(exprVisor, 1, Length(exprVisor) - 1);
-          Display.text := exprVisor;
+          Display.Text := Copy(Display.Text, 1, Length(Display.Text) - 1);
         end;
 end;
 
 procedure TForm1.cincoClick(Sender: TObject);
 begin
   EscreverExpr('5');
-  Display.Text := exprVisor;
 end;
 
 procedure TForm1.commaClick(Sender: TObject);
 begin
-  EscreverExpr('.');
-  Display.Text := exprVisor;
+  EscreverExpr(',');
 end;
 
 procedure TForm1.cosClick(Sender: TObject);
@@ -1051,20 +1023,17 @@ begin
   begin
     EscreverExpr('cos(');
   end;
-  Display.Text := exprVisor;
 end;
 
 procedure TForm1.diviClick(Sender: TObject);
 var resu : real;
 begin
   EscreverExpr('/');
-  Display.Text := exprVisor;
 end;
 
 procedure TForm1.DoisClick(Sender: TObject);
 begin
   EscreverExpr('2');
-  Display.Text := exprVisor;
 end;
 
 function processarPolonesa() : string;
@@ -1233,6 +1202,7 @@ var
   teste:string;
   i:integer;
 begin
+  exprVisor := Display.Text;
   converterParaPolonesa();
   (*for i := 0 to polonesaIndex do
   begin
@@ -1253,13 +1223,11 @@ end;
 procedure TForm1.eX27Click(Sender: TObject);
 begin
   EscreverExpr('√(');
-  Display.Text := exprVisor;
 end;
 
 procedure TForm1.eXClick(Sender: TObject);
 begin
   EscreverExpr('e^');
-  Display.Text := exprVisor;
 end;
 
 
